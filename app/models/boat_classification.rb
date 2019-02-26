@@ -1,6 +1,7 @@
 class BoatClassification < ActiveRecord::Base
-  belongs_to :boat
-  belongs_to :classification
+  belongs_to :capitian
+  has_many :boat_classifications
+  has_many :classifications, through: :boat_classifications
 
   def self.first_five
     all.limit(5)
